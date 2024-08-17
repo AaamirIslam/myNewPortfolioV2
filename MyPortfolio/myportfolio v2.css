@@ -1,0 +1,595 @@
+/* Header Styles */
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background-color: #FFECB3;
+  color: #333;
+  padding: 15px 0;
+  transition: background-color 0.3s ease;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for fade effect */
+  z-index: -1;
+}
+
+.header .container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* Relative positioning for the container */
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: #444;
+  color: #f1f1f1;
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    border-radius: 0 0 5px 5px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+    text-align: center;
+  }
+}
+
+/* General Styles */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  background: linear-gradient(to bottom, #E0F7FA, #80DEEA);
+  color: #333;
+}
+
+.container {
+  display: flex;
+  max-width: 1400px;
+  margin: auto;
+  padding: 20px;
+  gap: 20px;
+}
+
+.left-column, .right-column {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.left-column {
+  width: 33.33%;
+}
+
+.right-column {
+  width: 66.66%;
+}
+
+.profile-card {
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+  width: 50%;
+  border-radius: 10%;
+  height: auto;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.profile-name h2 {
+  margin: 0;
+  padding: 10px 0;
+  color: #2c3e50;
+  transition: color 0.3s ease;
+}
+
+.profile-name h2:hover {
+  color: #3498db;
+}
+
+.profile-info p {
+  margin: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.profile-info p:hover {
+  color: #3498db;
+}
+
+.skills-section, .languages-section {
+  margin-top: 20px;
+}
+
+.skills-section h3, .languages-section h3 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.skills-section h3:hover, .languages-section h3:hover {
+  color: #3498db;
+}
+
+.skill-bar, .language-bar {
+  background-color: #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-level, .language-level {
+  height: 20px;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  text-align: right;
+  line-height: 20px;
+  color: white;
+  padding-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.skill-bar:hover .skill-level, .language-bar:hover .language-level {
+  background-color: #2ecc71;
+}
+
+.experience-section, .education-section {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.experience-item, .education-item {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.experience-item h3, .education-item h3 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+  transition: color 0.3s ease;
+}
+
+.experience-item h3:hover, .education-item h3:hover {
+  color: #3498db;
+}
+
+.date {
+  display: block;
+  margin-bottom: 10px;
+  color: #888;
+}
+
+/* Contact Me Section Styles */
+.contact-me-section {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.contact-me-section h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.contact-me-section .form-group {
+  margin-bottom: 15px;
+}
+
+.contact-me-section .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contact-me-section .form-group input,
+.contact-me-section .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.contact-me-section .form-group textarea {
+  resize: vertical;
+}
+
+.contact-me-section button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-me-section button:hover {
+  background-color: #2980b9;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* Work Experience Section */
+.experience-section {
+  padding: 40px;
+  background-color: #2d2d2d;
+  color: #fff;
+  border-radius: 10px;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.experience-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #4CAF50;
+}
+
+.experience-item {
+  margin: 15px;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.experience-item h3 {
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.experience-item .date {
+  display: block;
+  color: #ddd;
+  margin-bottom: 10px;
+}
+
+.experience-item p {
+  color: #ddd;
+}
+
+/* Responsive Design *
+@media (max-width: 768px) {
+  .experience-item {
+      flex: 0 0 100%;
+      margin: 10px 0;
+  }
+}
+
+
+
+/* Education Section */
+.education-section {
+  padding: 40px;
+  background-color: #2d2d2d;
+  color: #fff;
+  border-radius: 10px;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.education-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #4CAF50;
+}
+
+.education-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.education-item {
+  flex: 0 0 300px;
+  margin: 15px;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.education-item h3 {
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.education-item .date {
+  display: block;
+  color: #ddd;
+  margin-bottom: 10px;
+}
+
+.education-item p {
+  color: #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .education-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .education-item {
+      flex: 0 0 100%;
+      margin: 10px 0;
+  }
+}
+
+
+/* Linux Interest Section */
+.interest-section {
+  padding: 40px;
+  background-color: #2d2d2d;
+  color: #fff;
+  border-radius: 10px;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.interest-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #4CAF50;
+}
+
+.interest-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.interest-item {
+  flex: 0 0 300px;
+  margin: 15px;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interest-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.interest-item h3 {
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.interest-item p {
+  color: #ddd;
+}
+
+.interest-item code {
+  background-color: #333;
+  padding: 2px 5px;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .interest-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .interest-item {
+      flex: 0 0 100%;
+      margin: 10px 0;
+  }
+}
+/*css for certifications and achievements */
+/* Certifications Section */
+.certifications-section {
+  padding: 40px;
+  background-color: #2d2d2d;
+  color: #fff;
+  border-radius: 10px;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.certifications-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #4CAF50;
+}
+
+.certifications-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.certification-item {
+  flex: 0 0 300px;
+  margin: 15px;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.certification-item h3 {
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.certification-item p {
+  color: #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .certifications-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .certification-item {
+      flex: 0 0 100%;
+      margin: 10px 0;
+  }
+}
+
+
+/* styles.css for youtue section */
+
+.youtube-section {
+  text-align: center;
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.youtube-section h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.youtube-card {
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.youtube-card:hover {
+  transform: scale(1.05);
+}
+
+.youtube-info {
+  padding: 20px;
+}
+
+.youtube-info h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #ff0000;
+}
+
+.youtube-info p {
+  margin: 10px 0 0;
+  color: #555;
+}
+
+.youtube-icon {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.youtube-icon i {
+  font-size: 36px;
+}
